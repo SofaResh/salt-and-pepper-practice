@@ -1,25 +1,33 @@
 step = ["R", "P", "S"]
 
 
+class NoSuchStrategyError(Exception):
+    pass
+
+
+class WrongNumberOfPlayersError(Exception):
+    pass
+
+
 def rps_game_winner(arr):
     """
         >>> rps_game_winner([['player1', 'P'], ['player2', 'S'], ['player3', 'S']])
         Traceback (most recent call last):
         ...
-        Exception: WrongNumberOfPlayersError
+        task_06.WrongNumberOfPlayersError
         >>> rps_game_winner([['player1', 'P'], ['player2', 'A']])
         Traceback (most recent call last):
         ...
-        Exception: NoSuchStrategyError
+        task_06.NoSuchStrategyError
         >>> rps_game_winner([['player1', 'P'], ['player2', 'S']])
         'player2 S'
         >>> rps_game_winner([['player1', 'P'], ['player2', 'P']])
         'player1 P'
     """
     if len(arr) != 2:
-        raise Exception("WrongNumberOfPlayersError")
+        raise WrongNumberOfPlayersError()
     elif arr[0][1] not in step or arr[1][1] not in step:
-        raise Exception("NoSuchStrategyError")
+        raise NoSuchStrategyError()
     elif arr[0][1] == arr[1][1]:
         return ' '.join(arr[0])
     else:

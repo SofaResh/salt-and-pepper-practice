@@ -3,7 +3,7 @@ def combine_anagrams(words_array):
         >>> combine_anagrams(["cars", "for", "potatoes", "racs", "four", "scar", "creams", "scream"])
         [['cars', 'racs', 'scar'], ['for'], ['potatoes'], ['four'], ['creams', 'scream']]
     """
-    sorted_words_array = [''.join(sorted(elem)) for elem in words_array]
+    sorted_words_array = [''.join(sorted(elem.lower())) for elem in words_array]
 
     result = {}
 

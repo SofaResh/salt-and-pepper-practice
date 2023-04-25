@@ -63,7 +63,7 @@ class Dessert:
 class JellyBean(Dessert):
     "Класс для проверки вкуса десерта"
 
-    def __init__(self, name, calories, flavor='unknown'):
+    def __init__(self, name="nameless", calories=0, flavor='unknown'):
         super().__init__(name, calories)
         self._flavor = flavor
 
@@ -92,3 +92,5 @@ dessert2.calories = 200
 
 dessert3 = JellyBean('Jelly', 80, 'black licorice')
 dessert3.name = 'Cherry jelly'
+
+dessert = JellyBean()
