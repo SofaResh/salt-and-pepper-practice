@@ -28,6 +28,8 @@ class Dessert:
         Это вкусный десерт? False
         >>> print("Вкус - " + str(dessert3.flavor))
         Вкус - black licorice
+        >>> print(dessert.is_healthy())
+        False
     """
 
     def __init__(self, name="nameless", calories=0):
@@ -51,7 +53,7 @@ class Dessert:
         self._calories = new_calories
 
     def is_healthy(self):
-        if self._calories < 200:
+        if type(self._calories) in (int, float) and self._calories < 200:
             return True
         else:
             return False
@@ -94,3 +96,6 @@ dessert3 = JellyBean('Jelly', 80, 'black licorice')
 dessert3.name = 'Cherry jelly'
 
 dessert = JellyBean()
+dessert.name = "test_name"
+dessert.calories = "test_calories"
+dessert.flavor = "test_flavor"
