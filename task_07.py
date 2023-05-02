@@ -13,4 +13,4 @@ def combine_anagrams(words_array):
         else:
             result[sorted_word] = [word]
 
-    print(list(result.values()))
+    return list(result.values())
